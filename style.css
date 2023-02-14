@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Orbitron:wght@500&family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#EBEBEB;
+    font-family: "Montserrat";
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #0083FF;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(8, 15, 40);
+}
+
+.menu1{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background:linear-gradient(90deg, rgba(1,12,65,1) 0%, rgba(0,26,139,1) 50%, rgba(0,7,171,1) 100%);
+    background-repeat: no-repeat;
+    background-size:auto;
+    padding: 1%;  
+}
+
+.logo{
+    font-family: "Orbitron";
+    font-size: 50px;
+    color:rgba(3, 83, 255, 0.994);
+    font-weight: 600;
+    line-height: 0.10;
+}
+
+.menu2{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: rgba(2, 25, 74, 0.994);
+    padding: 1%;  
+    border-top: 0.10em solid white;
+    border-bottom: 0.10em solid white;
+}
+
+.darkMode{
+    background-color: rgb(22, 22, 22);
+}
+
+.darkMode .card{
+    color: black;
+    background-color:rgba(25, 93, 242, 0.994);
+    border: 0.10em solid white;
+}
+
+.card-body{
+    background-color:#FFFFFF;
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    border-radius: 1rem;
+    line-height: 0.50rem;
+}
+
+.darkMode .card-body{
+    color: white;
+    background-color:rgba(2, 25, 74, 0.994);
+}
+
+.card, #productoCarrito1{
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover{
+    box-shadow: 4px 3px 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+    transition: all .3s;
+}
+
+.darkMode h3{
+    background-color: #FFFFFF;
+}
