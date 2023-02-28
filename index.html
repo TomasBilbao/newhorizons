@@ -10,224 +10,227 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Preentrega 2 - JavaScript</title>
+    <title>Preentrega 3 - JavaScript</title>
 </head>
 
 <body class="">
 
+    <header>
 
-    <div class="menu1">
+        <nav class="navbar navbar-expand-lg navbar-light  bg-primary">
 
-        <div>
-            <h1 class="logo">NEW HORIZONS</h1>
-        </div>
+            <div class="container-fluid">
 
-        <div>
-            <form class="d-flex">
-                <input id="buscador" class="form-control me-2" placeholder="Buscar Modelo" aria-label="Search">
-                <button id="btnBuscar" class="btn btn-outline-primary">Buscar</button>
-            </form>
+                <h1 class="logo">NEW HORIZONS</h1>
 
-        </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div>
-            <button id="botonDarkMode" class="btn btn-dark">Dark Mode</button>
-        </div>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-        <div>
-            <button id="botonLightMode" class="btn btn-light">Light Mode</button>
-        </div>
+                    <ul class="navbar-nav">
 
-    </div>
+                        <li class="nav-item">
+                            <button id="verInventario" class="subrayado" data-bs-toggle="modal"
+                                data-bs-target="#idVerInventario">INVENTARIO</button>
+                        </li>
+
+                        <li class="nav-item dropdown">
+
+                            <a href="#" id="navbarDropdown" class="subrayado" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                ORDENAR
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <li class="dropdown-item" id="alfabeticamente" data-bs-target="#idAlfabeticamente">
+                                    Alfabético
+                                </li>
+
+                                <li class="dropdown-item" id="menorPrecio" data-bs-target="#idMenorPrecio">
+                                    Menor Precio
+                                </li>
+
+                                <li class="dropdown-item" id="mayorPrecio" data-bs-target="#idMayorPrecio">
+                                    Mayor Precio
+                                </li>
+
+                                <li class="dropdown-item" id="menorMemoriaInterna"
+                                    data-bs-target="#idMenorMemoriaInterna">
+                                    Menor Memoria Interna
+                                </li>
+
+                                <li class="dropdown-item" id="mayorMemoriaInterna"
+                                    data-bs-target="#idMayorMemoriaInterna">
+                                    Mayor Memoria Interna
+                                </li>
+
+                                <li class="dropdown-item" id="menorMemoriaRam" data-bs-target="#idMenorMemoriaRam">
+                                    Menor Memoria Ram
+                                </li>
+
+                                <li class="dropdown-item" id="mayorMemoriaRam" data-bs-target="#idMayorMemoriaRam">
+                                    Mayor Memoria Ram
+                                </li>
+
+                                <li class="dropdown-item" id="menorResolucionCam"
+                                    data-bs-target="#idmenorResoluciónCam">
+                                    Menor Resolución Cámara
+                                </li>
+
+                                <li class="dropdown-item" id="mayorResolucionCam"
+                                    data-bs-target="#idmayorResoluciónCam">
+                                    Mayor Resolución Cámara
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <button id="rangoPrecio" class="subrayado" data-bs-toggle="modal"
+                                data-bs-target="#ModalRangoPrecio">RANGO DE PRECIOS</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button id="agregarCel" class="subrayado" data-bs-toggle="modal"
+                                data-bs-target="#idModalValidarAgregarCel">AGREGAR CEL</button>
+                        </li>
 
 
-    <div class="menu2">
+                        <li class="nav-item">
+                            <button id="eliminarCel" class="subrayado" data-bs-toggle="modal"
+                                data-bs-target="#idModalValidarEliminarCel">ELIMINAR CEL</button>
+                        </li>
 
-        <div>
-            <ul class="navbar-nav me-auto">
-                <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Ordenar Inventario:</option>
-                    <option value="1">Precio mayor.</option>
-                    <option value="2">Precio menor.</option>
-                    <option value="3">Alfabeticamente.</option>
-                </select>
-            </ul>
-        </div>
+                        <li class="nav-item">
+                            <input id="buscador" class="form-control me-2" type="search"
+                                placeholder="Buscar en NewHorizons" aria-label="Search">
+                        </li>
 
-        <div>
-            <button id="agregarCel" data-bs-toggle="modal" data-bs-target="#idModalAgregarCel"
-                class="btn btn-primary">Agregar Dispositivo</button>
-        </div>
-
-        <div>
-            <button id="eliminarCel" data-bs-toggle="modal" data-bs-target="#idModalEliminarCel"
-                class="btn btn-primary">Eliminar Dispositivo</button>
-        </div>
-
-        <div>
-            <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-secondary"><i
-                    class="fas fa-shopping-cart fa-1x"></i></a>
-        </div>
-
-    </div>
-
-
-    <div class="container">
-        <div id="coincidencia"></div>
-        <div id="cel" class="row"></div>
-    </div>
-
-    <div class="modal fade" id="idModalAgregarCel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-        <div class="modal-dialog">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar Dispositivo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body" id="modal-body">
-
-                    <form id="formAgregarCel">
-
-                        <div class="mb-3">
-                            <label for="marca" class="form-label">Marca:</label>
-                            <input type="text" class="form-control" id="marcaInput" aria-describedby="marca">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="modelo" class="form-label">Modelo:</label>
-                            <input type="text" class="form-control" id="modeloInput" aria-describedby="modelo">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="color" class="form-label">Color:</label>
-                            <input type="text" class="form-control" id="colorInput" aria-describedby="color">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="memoriaInterna" class="form-label">Memoria Interna:</label>
-                            <input type="text" class="form-control" id="memoriaInternaInput"
-                                aria-describedby="memoriaInterna">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="memoriaRam" class="form-label">Memori Ram:</label>
-                            <input type="text" class="form-control" id="memoriaRamInput" aria-describedby="memoriaRam">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="camara" class="form-label">Cámara:</label>
-                            <input type="text" class="form-control" id="camaraInput" aria-describedby="camara">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="precio" class="form-label">Precio:</label>
-                            <input type="text" class="form-control" id="precioInput" aria-describedby="precio">
-                        </div>
-
-                    </form>
-
-                </div>
-
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-                    <button type="text" id="guardarCelBtn" class="btn btn-primary" data-bs-dismiss="modal">Agregar
-                        Dispositivo</button>
+                    </ul>
 
                 </div>
 
             </div>
 
-        </div>
+        </nav>
 
-    </div>
+    </header>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
 
-    <div class="modal fade" id="idModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="container-fluid" id="segundaNav">
 
-        <div class="modal-dialog">
+            <div>
+                <a id="botonDarkMode" class="btn btn-light">
+                    <i class="fas fa-moon fa-2x"></i>
+                </a>
+            </div>
 
-            <div class="modal-content">
+            <div>
+                <a id="botonLightMode" class="btn btn-light">
+                    <i class="far fa-sun fa-2x"></i>
+                </a>
+            </div>
 
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras:</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+            <div>
+                <a id="botonFavoritos" data-bs-toggle="modal" data-bs-target="#idModalFavoritos" class="btn btn-danger">
+                    <i class="fa fa-heart fa-2x"></i>
+                </a>
+            </div>
 
-                <div class="modal-body" id="modal-bodyCarrito">
-                </div>
-
-                <div class="row ml-ato">
-                    <p id="precioTotal"></p>
-                </div>
-
-
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-                    <button type="button" data-bs-dismiss="modal" class="btn btn-primary"
-                        id="botonFinalizarCompra">Finalizar Compra</button>
-
-                </div>
-
+            <div>
+                <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-success">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                </a>
             </div>
 
         </div>
 
-    </div>
+    </nav>
 
+    <main>
 
-    <div class="modal fade" id="idModalEliminarCel" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+        <div class="container">
 
-        <div class="modal-dialog">
+            <div id="coincidencia"></div>
 
-            <div class="modal-content">
+            <div id="cel" class="row"></div>
 
-                <div class="modal-header">
+        </div>
 
-                    <h5 class="modal-title" id="exampleModalLabel">Eliminar Dispositivo por ID</h5>
+        <!-- Carga para Inicio-->
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div id="Carga">
 
+            <h2 class="logo">New Horizons</h2>
+
+            <div id="loaderInicio" class="d-flex justify-content-center">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden"></span>
                 </div>
+            </div>
 
-                <div class="modal-body" id="modal-body">
+            <img src="assets/Inicio.png" alt="Inicio" id="inicioImg">
 
-                    <div id="iDInventario">
+        </div>
+
+        <!-- Modal Rango de Precios -->
+
+        <div class="modal fade" id="ModalRangoPrecio" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Buscar en Rango de Precios</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                     </div>
 
-                    <form>
+                    <div class="modal-body" id="modal-bodyRangoPrecios">
 
-                        <div class="mb-3">
-                            <label for="eliminarModelo" class="form-label" style="text-align: center;">Ingrese la ID del
-                                modelo que desea
-                                eliminar:</label>
+                        <form id="formRangoPrecio">
 
-                            <input type="text" class="form-control" id="eliminarModeloInput"
-                                aria-describedby="eliminarModelo">
+                            <div class="mb-3">
 
-                        </div>
+                                <label for="minimo" class="form-label">Precio Mínimo:</label>
 
-                        <p style="text-align: center;"><strong>Haga doble click en "Eliminar Dispositivo" para eliminar
-                                la unidad.</strong></p>
+                                <input type="text" class="form-control" id="minimoInput"
+                                    aria-describedby="precioMinimo">
 
-                    </form>
+                            </div>
 
-                </div>
+                            <div class="mb-3">
 
-                <div class="modal-footer">
+                                <label for="maximo" class="form-label">Precio Máximo:</label>
 
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <input type="text" class="form-control" id="maximoInput"
+                                    aria-describedby="precioMaximo">
 
-                    <button type="text" id="eliminarModeloBtn" class="btn btn-primary" data-bs-dismiss="modal">Eliminar
-                        Dispositivo</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                        <button type="text" id="encontrarRango" class="btn btn-primary" data-bs-dismiss="modal">Buscar
+                            en Rango</button>
+
+                    </div>
 
                 </div>
 
@@ -235,14 +238,480 @@
 
         </div>
 
-    </div>
+        <!-- Modal Validación para agregar Cel-->
 
-    <!--Script de Bootstrap-->
+        <div class="modal fade" id="idModalValidarAgregarCel" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Acceso Repositor</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-bodyValidarAgreCel">
+
+                        <form id="validacionAgrForm">
+
+                            <div class="mb-3">
+
+                                <label for="usuario" class="form-label">Usuario:</label>
+
+                                <input type="text" class="form-control" id="usuarioInput"
+                                    aria-describedby="usuarioValidar">
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="contraseña" class="form-label">Contraseña:</label>
+
+                                <input type="password" class="form-control" id="contraseñaInput"
+                                    aria-describedby="contraseñaValidar">
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                        <button type="text" id="validarAccesoAgregar" class="btn btn-primary"
+                            data-bs-dismiss="modal">Validar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal Agregar Cel -->
+
+
+        <div class="modal fade" id="idModalAgregarCel" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Dispositivo</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-bodyAgregarCel">
+
+                        <form id="formAgregarCel">
+
+                            <div class="mb-3">
+
+                                <label for="modelo" class="form-label">Modelo:</label>
+
+                                <input type="text" class="form-control" id="modeloInput" aria-describedby="modelo">
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="marca" class="form-label">Marca:</label>
+
+                                <input type="text" class="form-control" id="marcaInput" aria-describedby="marca">
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="color" class="form-label">Color:</label>
+
+                                <input type="text" class="form-control" id="colorInput" aria-describedby="color">
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="memoriaInterna" class="form-label">Memoria Interna:</label>
+
+                                <input type="text" class="form-control" id="memoriaInternaInput"
+                                    aria-describedby="memoriaInterna">
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="memoriaRam" class="form-label">Memoria Ram:</label>
+
+                                <input type="text" class="form-control" id="memoriaRamInput"
+                                    aria-describedby="memoriaRam">
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="camara" class="form-label">Cámara:</label>
+
+                                <input type="text" class="form-control" id="camaraInput" aria-describedby="camara">
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="precio" class="form-label">Precio:</label>
+
+                                <input type="text" class="form-control" id="precioInput" aria-describedby="precio">
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                        <button type="text" id="guardarCelBtn" class="btn btn-primary" data-bs-dismiss="modal">Agregar
+                            Dispositivo</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal Reintentar Validación para agregar Cel-->
+
+        <div class="modal fade" id="contraseñaIncorrecta" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header" style="background-color: rgb(173, 1, 1);">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Acceso Denegado</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-bodyReintAgreCel">
+
+                        <div class="mb-3">
+
+                            <label class="form-label" style="text-align: center; color: rgb(173, 1, 1)">El usuario o
+                                contraseña
+                                ingresados son incorrectos, si deseas puedes volver a intentar.</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                        <button type="text" id="reintAccesoAgregar" class="btn btn-primary"
+                            style="background-color: rgb(173, 1, 1)" data-bs-dismiss="modal">Reintentar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal Favoritos-->
+
+        <div class="modal fade" id="idModalFavoritos" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Favoritos
+                        </h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-bodyFavoritos">
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal Carrito -->
+
+        <div class="modal fade" id="idModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Carrito de
+                            Compras</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+
+                    <div class="modal-body" id="modal-bodyCarrito">
+                    </div>
+
+                    <div>
+                        <p id="precioTotal"></p>
+                    </div>
+
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-primary"
+                            id="botonFinalizarCompra">Finalizar Compra</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal Validación para eliminar Cel-->
+
+        <div class="modal fade" id="idModalValidarEliminarCel" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Acceso Repositor</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-bodyValidarElimCel">
+
+                        <form id="validacionElimForm">
+
+                            <div class="mb-3">
+
+                                <label for="usuario" class="form-label">Usuario:</label>
+
+                                <input type="text" class="form-control" id="usuarioInputElim"
+                                    aria-describedby="usuarioValidarElim">
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="contraseña" class="form-label">Contraseña:</label>
+
+                                <input type="password" class="form-control" id="contraseñaInputElim"
+                                    aria-describedby="contraseñaValidarElim">
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                        <button type="text" id="validarAccesoEliminar" class="btn btn-primary"
+                            data-bs-dismiss="modal">Validar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal Eliminar Cel-->
+
+        <div class="modal fade" id="idModalEliminarCel" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar
+                            Dispositivo del Inventario</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-bodyEliminarInventario">
+
+                        <div id="mostrarIdInventario"></div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal Reintentar Validación para  Eliminar Cel-->
+
+        <div class="modal fade" id="contraseñaIncorrectaElim" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header" style="background-color: rgb(173, 1, 1);">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Acceso Denegado</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-bodyReintElimCel">
+
+                        <div class="mb-3">
+
+                            <label class="form-label" style="text-align: center; color: rgb(173, 1, 1)">El usuario o
+                                contraseña
+                                ingresados son incorrectos, si deseas puedes volver a intentar.</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+
+                        <button type="text" id="reintAccesoEliminar" class="btn btn-primary"
+                            style="background-color: rgb(173, 1, 1)" data-bs-dismiss="modal">Reintentar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="gridFooter">
+
+        <div class="h3Footer0">
+            <h3 style="text-align: center; color:white;">NEW HORIZONS - LAS MEJORES MARCAS</h3>
+            <h3 style="text-align: center; color:white;">HORARIOS: LUNES A SABADOS 8HS A 17HS</h3>
+        </div>
+
+        <ul class="ulFooter">
+
+            <li class="listEnlaces">
+
+                <a href="SoloFicción" target="_blank" style="text-decoration: none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 64 58"
+                        style=" fill:#ffffff;" aria-label="Correo">
+                        <path
+                            d="M55,10H9c-2.209,0-4,1.791-4,4v34c0,2.209,1.791,4,4,4h46c2.209,0,4-1.791,4-4V14C59,11.791,57.209,10,55,10z M55,45.738 C54.954,47,53.901,48,52.618,48H49.5L51,21L32,33L13,22l1.5,26h-3.118C10.099,48,9.046,47,9,45.738V16.289 c0-1.25,1.03-2.263,2.3-2.263h1.2L32,29l19.5-14.974h1.2c1.27,0,2.3,1.013,2.3,2.263V45.738z">
+                        </path>
+                    </svg>
+                </a>
+
+                <a href="SoloFicción" target="_blank" style="text-decoration: none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="34" style="fill: #ffffff;"
+                        class="bi bi-pinterest" viewBox="0 0 16 16" aria-label="Pinterest">
+                        <path
+                            d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z" />
+                    </svg>
+                </a>
+
+                <a href="SoloFicción" target="_blank" style="text-decoration: none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" style="fill: #ffffff;"
+                        class="bi bi-youtube" viewBox="0 0 16 15" aria-label="YouTube">
+                        <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                    </svg>
+                </a>
+
+            </li>
+
+        </ul>
+
+        <h3 class="h3FooterCopy" style="text-align: center; color:white;">&copy; 2022 NEW HORIZONS. TODOS LOS DERECHOS
+            RESERVADOS</h3>
+
+    </footer>
+
+    <!-- Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
 
-    <!--Archivos JS propios-->
+
+    <!-- Sweet Alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Toastify-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!--Archivos JS-->
     <script src="JS/class.js"></script>
     <script src="JS/main.js"></script>
     <script src="JS/darkMode.js"></script>

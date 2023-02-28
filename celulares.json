@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "marca": "Apple",
+        "modelo": "iPhone14",
+        "color": "Morado",
+        "memoriaInterna": 128,
+        "memoriaRam": 6,
+        "camara": 48,
+        "precio": 484141,
+        "imagen": "iPhone14.png"
+    },
+    {
+        "id": 2,
+        "marca": "Samsung",
+        "modelo": "GalaxyA13",
+        "color": "Celeste",
+        "memoriaInterna": 64,
+        "memoriaRam": 4,
+        "camara": 50,
+        "precio": 74999,
+        "imagen": "GalaxyA13.png"
+    },
+    {
+        "id": 3,
+        "marca": "Motorola",
+        "modelo": "MotoE20",
+        "color": "Aqua",
+        "memoriaInterna": 32,
+        "memoriaRam": 4,
+        "camara": 13,
+        "precio": 37999,
+        "imagen": "MotoE20.png"
+    },
+    {
+        "id": 4,
+        "marca": "Samsung",
+        "modelo": "GalaxyA53",
+        "color": "Azul",
+        "memoriaInterna": 128,
+        "memoriaRam": 6,
+        "camara": 64,
+        "precio": 147999,
+        "imagen": "GalaxyA53.png"
+    },
+    {
+        "id": 5,
+        "marca": "Motorola",
+        "modelo": "MotoE40",
+        "color": "Negro",
+        "memoriaInterna": 64,
+        "memoriaRam": 4,
+        "camara": 48,
+        "precio": 52999,
+        "imagen": "MotoE40.png"
+    },
+    {
+        "id": 6,
+        "marca": "Apple",
+        "modelo": "iPhone7",
+        "color": "Dorado",
+        "memoriaInterna": 32,
+        "memoriaRam": 4,
+        "camara": 12,
+        "precio": 199000,
+        "imagen": "iPhone7.png"
+    },
+    {
+        "id": 7,
+        "marca": "Motorola",
+        "modelo": "MotoG52",
+        "color": "Gris",
+        "memoriaInterna": 128,
+        "memoriaRam": 6,
+        "camara": 50,
+        "precio": 73999,
+        "imagen": "MotoG52.png"
+    },
+    {
+        "id": 8,
+        "marca": "Apple",
+        "modelo": "iPhone8",
+        "color": "Gris",
+        "memoriaInterna": 64,
+        "memoriaRam": 4,
+        "camara": 12,
+        "precio": 159999,
+        "imagen": "iPhone8.png"
+    },
+    {
+        "id": 9,
+        "marca": "Samsung",
+        "modelo": "GalaxyA02",
+        "color": "Azul",
+        "memoriaInterna": 32,
+        "memoriaRam": 4,
+        "camara": 13,
+        "precio": 49999,
+        "imagen": "GalaxyA02.png"
+    }
+]
